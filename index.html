@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111310" />
+    <meta
+      name="description"
+      content="FORM / FUNCTION — an interactive kinetic sculpture. A self-initiated creative engineering study by Michael L. Lawson."
+    />
+    <link rel="icon" type="image/svg+xml" href="./brand/mllce-icon.svg" />
+    <title>FORM / FUNCTION — Michael L. Lawson</title>
+  </head>
+  <body>
+    <a class="skip" href="#controls">Skip to sculpture controls</a>
+    <header>
+      <a
+        class="brand-logo"
+        href="./index.html"
+        aria-label="Michael L. Lawson Creative Engineering"
+        ><picture
+          ><source media="(max-width: 600px)" srcset="./brand/mllce-icon.svg" />
+          <img
+            src="./brand/mllce-logo.svg"
+            width="612"
+            height="180"
+            alt="Michael L. Lawson Creative Engineering" /></picture></a
+      ><span class="edition">SIGNATURE STUDY / 001</span
+      ><a href="./case-study.html">Case study ↗</a>
+    </header>
+    <main>
+      <section class="experience" aria-labelledby="title">
+        <div class="intro">
+          <p class="eyebrow">MICHAEL L. LAWSON / SELF-INITIATED CONCEPT</p>
+          <h1 id="title">
+            FORM<span class="slash">/</span><br /><span class="outline"
+              >FUNCTION</span
+            >
+          </h1>
+          <p class="lede">
+            An idea, given structure.<br />A structure, set in motion.
+          </p>
+          <button id="film" class="primary">
+            Play the sequence <span>↗</span>
+          </button>
+          <p class="duration">THREE CHAPTERS · 18 SECONDS · REAL-TIME 3D</p>
+        </div>
+        <div class="stage" id="stage">
+          <div class="stage-grid"></div>
+          <div
+            id="canvas"
+            role="group"
+            aria-label="Interactive orbital sculpture: three nested metallic rings surrounding an illuminated core"
+          ></div>
+          <div id="fallback" hidden>
+            <svg
+              viewBox="0 0 500 500"
+              role="img"
+              aria-label="Orbital sculpture illustration"
+            >
+              <g fill="none" stroke="#c7ae79" stroke-width="8">
+                <ellipse
+                  cx="250"
+                  cy="250"
+                  rx="190"
+                  ry="85"
+                  transform="rotate(-35 250 250)"
+                />
+                <ellipse cx="250" cy="250" rx="150" ry="150" />
+                <ellipse
+                  cx="250"
+                  cy="250"
+                  rx="70"
+                  ry="120"
+                  transform="rotate(30 250 250)"
+                />
+              </g>
+              <circle cx="250" cy="250" r="32" fill="#e4cf9f" />
+            </svg>
+            <p>
+              Illustrated view. Interactive 3D is unavailable on this device.
+            </p>
+          </div>
+          <div class="object-label">
+            <span>F/F — 001</span><span>ORBITAL ENGINE</span>
+          </div>
+          <div class="stage-foot">
+            <span id="scene-status" role="status">Finished / assembled</span
+            ><span>DRAG TO ORBIT · SCROLL TO ZOOM</span>
+          </div>
+        </div>
+        <div class="chapter-nav" aria-label="Sculpture chapters">
+          <button data-chapter="0" aria-pressed="false">
+            <span>01</span> Imagine <small>THE UNDERLYING IDEA</small></button
+          ><button data-chapter="1" aria-pressed="false">
+            <span>02</span> Construct
+            <small>THE LOGIC OF ASSEMBLY</small></button
+          ><button data-chapter="2" aria-pressed="true">
+            <span>03</span> Activate <small>THE OBJECT IN MOTION</small>
+          </button>
+        </div>
+      </section>
+      <section id="controls" class="controls" aria-labelledby="controls-title">
+        <div>
+          <p class="eyebrow">THE OBJECT IS YOURS TO EXPLORE</p>
+          <h2 id="controls-title">Look closer.</h2>
+        </div>
+        <div class="control-group">
+          <span class="control-label">Surface</span>
+          <div class="segmented">
+            <button data-view="finished" aria-pressed="true">Finished</button
+            ><button data-view="wireframe" aria-pressed="false">
+              Wireframe</button
+            ><button data-view="blueprint" aria-pressed="false">
+              Blueprint
+            </button>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="assembly"
+            >Assembly <output id="assembly-value">0%</output></label
+          ><input
+            id="assembly"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            aria-label="Explode sculpture assembly"
+          />
+        </div>
+        <div class="control-group">
+          <label for="speed"
+            >Motion speed <output id="speed-value">0.6×</output></label
+          ><input id="speed" type="range" min="0" max="150" value="60" />
+        </div>
+        <div class="actions">
+          <button id="motion" aria-pressed="false">Start motion</button
+          ><button id="reset">Reset view ↺</button
+          ><button id="sound" aria-pressed="false">Sound off</button>
+        </div>
+      </section>
+      <section id="notes" class="notes">
+        <div>
+          <p class="eyebrow">ABOUT THE STUDY</p>
+          <h2>Beauty has<br />an underlying logic.</h2>
+        </div>
+        <div class="notes-copy">
+          <p>
+            FORM / FUNCTION explores the space between a drawing and an object.
+            Three concentric rings share a center, but move on independent axes.
+            Together, they form a kinetic sculpture that reveals its
+            construction as readily as its silhouette.
+          </p>
+          <p>
+            This is a self-initiated digital concept by Michael L. Lawson. The
+            orbital engine is an artistic mechanism, rather than a working
+            physical machine.
+          </p>
+          <dl>
+            <div>
+              <dt>DISCIPLINES</dt>
+              <dd>Creative coding · Interaction design · 3D motion</dd>
+            </div>
+            <div>
+              <dt>BUILT WITH</dt>
+              <dd>Three.js · TypeScript · Web Audio · HTML & CSS</dd>
+            </div>
+            <div>
+              <dt>PROTOTYPE SCOPE</dt>
+              <dd>
+                Procedural geometry, three surface studies, an exploded
+                assembly, and a choreographed introduction.
+              </dd>
+            </div>
+          </dl>
+          <a class="study-link" href="./case-study.html"
+            >Read the full case study ↗</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>FORM / FUNCTION</span
+      ><span>AN INDEPENDENT STUDY BY MICHAEL L. LAWSON</span
+      ><a href="#title">Back to the object ↑</a>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

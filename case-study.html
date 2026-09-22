@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111310" />
+    <meta
+      name="description"
+      content="The FORM / FUNCTION case study: concept, cinematic interaction, procedural Three.js geometry, and accessible exploration."
+    />
+    <title>FORM / FUNCTION — Case Study</title>
+    <link rel="icon" type="image/svg+xml" href="./brand/mllce-icon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#case-main">Skip to case study</a>
+    <header>
+      <a
+        class="brand-logo"
+        href="./index.html"
+        aria-label="Michael L. Lawson Creative Engineering"
+        ><picture
+          ><source media="(max-width: 600px)" srcset="./brand/mllce-icon.svg" />
+          <img
+            src="./brand/mllce-logo.svg"
+            width="612"
+            height="180"
+            alt="Michael L. Lawson Creative Engineering" /></picture></a
+      ><span class="edition">SIGNATURE / CASE STUDY</span
+      ><a href="./index.html">Explore the sculpture ↗</a>
+    </header>
+    <main id="case-main" class="case-study">
+      <section class="case-hero">
+        <p class="eyebrow">SELF-INITIATED CONCEPT / MICHAEL L. LAWSON</p>
+        <h1>
+          FORM <span class="slash">/</span><br /><span class="outline"
+            >FUNCTION</span
+          >
+        </h1>
+        <p class="case-lede">
+          Making creative engineering<br />something you can see—and explore.
+        </p>
+        <p class="case-intro">
+          An interactive kinetic sculpture that takes visitors from the
+          underlying idea to the assembled object, then invites them to
+          investigate its form, motion, and construction.
+        </p>
+        <a class="study-link" href="./index.html">Launch the experience ↗</a>
+        <dl class="case-facts">
+          <div>
+            <dt>PROJECT TYPE</dt>
+            <dd>Independent digital concept</dd>
+          </div>
+          <div>
+            <dt>FOCUS</dt>
+            <dd>Art direction, interaction & creative development</dd>
+          </div>
+          <div>
+            <dt>TECHNOLOGY</dt>
+            <dd>Three.js, TypeScript & Web Audio</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">01 / THE BRIEF</p>
+          <h2>A different kind<br />of portfolio piece.</h2>
+        </div>
+        <div>
+          <p>
+            The goal was to create a Signature project that expands a portfolio
+            of brand and product work into spatial interaction and cinematic
+            storytelling.
+          </p>
+          <p>
+            The experience needed an original visual identity, a memorable
+            object, and a reason to interact. A focused sculpture offered enough
+            depth to demonstrate creative coding without requiring an entire
+            virtual world.
+          </p>
+          <p class="case-callout">
+            Design question: how can an experience reveal the logic behind
+            something beautiful?
+          </p>
+        </div>
+      </section>
+      <section class="case-visual">
+        <img
+          src="./studies/orbital-study.svg"
+          width="1200"
+          height="440"
+          alt="Construction schematic showing three concentric rings, their separated assembly, and their independent rotation axes"
+        />
+        <p>
+          Construction schematic / nested form, separated parts, independent
+          axes. This is an explanatory drawing of the digital concept.
+        </p>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">02 / THE VISUAL APPROACH</p>
+          <h2>Precision,<br />with atmosphere.</h2>
+        </div>
+        <div>
+          <p>
+            An industrial editorial direction gives the sculpture a quiet
+            setting: graphite, warm ivory, and restrained brass, with condensed
+            headlines and monospace labels.
+          </p>
+          <p>
+            Three nested rings define the silhouette. Bearing forms and edge
+            markings make the construction legible. Studio reflections reveal
+            the metallic surfaces, while the faceted luminous core anchors the
+            composition.
+          </p>
+          <p>
+            The approved Michael L. Lawson identity signs the work in the
+            header. Its original colors and geometry remain intact, with the
+            full SVG logo on desktop and the icon on narrow screens.
+          </p>
+        </div>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">03 / THE EXPERIENCE</p>
+          <h2>Introduce.<br />Then hand over.</h2>
+        </div>
+        <div>
+          <ol class="case-journey">
+            <li>
+              <strong>Imagine</strong>
+              <p>
+                A blueprint surface establishes the underlying structure and
+                shared center.
+              </p>
+            </li>
+            <li>
+              <strong>Construct</strong>
+              <p>
+                The rings separate into an exploded assembly. Eased motion makes
+                the relationship between components easier to follow.
+              </p>
+            </li>
+            <li>
+              <strong>Activate</strong>
+              <p>
+                The finished metal returns as the sculpture moves on independent
+                axes.
+              </p>
+            </li>
+          </ol>
+          <p>
+            The introduction lasts 18 seconds and starts on request. Visitors
+            can pause, resume, or exit, then choose surface views, adjust
+            assembly and speed, rotate the camera, and inspect component
+            annotations.
+          </p>
+          <p>
+            Sound is optional. It adds a synthesized ambient layer rather than
+            carrying information required to understand the piece.
+          </p>
+        </div>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">04 / THE BUILD</p>
+          <h2>Geometry<br />as a design tool.</h2>
+        </div>
+        <div>
+          <p>
+            The object is constructed directly in Three.js: torus rings,
+            cylindrical bearings, a central axle, and an icosahedral core. This
+            keeps the sculpture editable in code and avoids external model
+            dependencies.
+          </p>
+          <p>
+            TypeScript coordinates the sequence, manual controls, and scene
+            state. A shared animation loop drives the camera arc, ring
+            rotations, and eased assembly. Changes in chapter update the HTML
+            captions and controls alongside the scene.
+          </p>
+          <p>
+            Each ring’s 48 edge markings share an instanced mesh. Across the
+            three rings, that replaces 144 individual marking meshes with three
+            instanced meshes, reducing the draw submissions for those repeated
+            details.
+          </p>
+          <p>
+            A generated studio environment supplies reflections. Pixel density
+            is capped to limit rendering cost, and camera framing adapts to
+            narrow viewports.
+          </p>
+        </div>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">05 / ACCESS & CONTROL</p>
+          <h2>Invite exploration.<br />Keep it approachable.</h2>
+        </div>
+        <div>
+          <ul class="case-list">
+            <li>
+              Native buttons and range inputs support keyboard interaction.
+            </li>
+            <li>
+              Dedicated camera buttons offer rotation and zoom without dragging;
+              the focused canvas also accepts keyboard commands.
+            </li>
+            <li>
+              Reduced-motion handling provides static chapter exploration and
+              disables the cinematic sequence.
+            </li>
+            <li>
+              A static SVG illustration appears if WebGL initialization fails or
+              the rendering context is lost.
+            </li>
+            <li>
+              Playback pauses when the page becomes hidden. Audio is suspended
+              in the background.
+            </li>
+            <li>
+              Captions sit in reserved space below the sculpture rather than
+              competing with its silhouette.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-row">
+        <div>
+          <p class="eyebrow">06 / RESULT & REFLECTION</p>
+          <h2>A working expression<br />of Creative Engineering.</h2>
+        </div>
+        <div>
+          <p>
+            The result is a locally reviewed interactive experience that
+            combines spatial composition, animation, explanatory UI, and direct
+            manipulation in one focused piece.
+          </p>
+          <p>
+            TypeScript and the production build pass. Local browser checks
+            verified rendering, chapter selection, component annotations,
+            playback controls, reset, and layouts without horizontal overflow at
+            375, 768, and 1440 pixels.
+          </p>
+          <p>
+            The sculpture is an artistic mechanism, not a validated physical
+            machine. This self-initiated study has no client, commercial
+            metrics, or user-research outcomes. Physical-device performance and
+            broader browser testing remain release checks; reduced-motion and
+            fallback handling were reviewed in code rather than simulated in
+            this pass.
+          </p>
+          <p class="case-callout">
+            The central lesson: motion earns its place when it helps a visitor
+            understand how a composition is put together.
+          </p>
+          <a class="study-link" href="./index.html"
+            >Return to FORM / FUNCTION ↗</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>FORM / FUNCTION</span
+      ><span>AN INDEPENDENT STUDY BY MICHAEL L. LAWSON</span
+      ><a href="#case-main">Back to the case study ↑</a>
+    </footer>
+  </body>
+</html>
