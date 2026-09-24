@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- Source for public/social/form-function.png (1200x630): serve with `npm run dev`, capture at 1200x630, then composite the sculpture render (see README). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FORM / FUNCTION social card</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        display: grid;
+        grid-template-columns: 46% 54%;
+        padding: 0 64px;
+        box-sizing: border-box;
+      }
+      .card .intro {
+        padding-top: 120px;
+        z-index: 2;
+      }
+      .card h1 {
+        font-size: 150px;
+      }
+      .card .lede {
+        font-size: 20px;
+        margin: 28px 0 0;
+      }
+      .card .duration {
+        margin-top: 26px;
+      }
+      .card .stage {
+        height: 630px;
+      }
+      .card .object-label {
+        top: 40px;
+        right: 0;
+      }
+      .card .brand {
+        position: absolute;
+        left: 64px;
+        bottom: 44px;
+        height: 44px;
+      }
+      .card .brand img {
+        height: 44px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="intro">
+        <p class="eyebrow">MICHAEL L. LAWSON / CREATIVE ENGINEERING STUDY</p>
+        <h1>
+          FORM<span class="slash">/</span><br /><span class="outline"
+            >FUNCTION</span
+          >
+        </h1>
+        <p class="lede">
+          An idea, given structure.<br />A structure, set in motion.
+        </p>
+        <p class="duration">INTERACTIVE KINETIC SCULPTURE · REAL-TIME 3D</p>
+      </div>
+      <div class="stage" id="stage">
+        <div class="stage-grid"></div>
+        <div id="canvas"></div>
+        <div class="object-label">
+          <span>F/F — 001</span><span>ORBITAL ENGINE</span>
+        </div>
+      </div>
+      <a class="brand"><img src="/brand/mllce-logo.svg" alt="" /></a>
+    </div>
+  </body>
+</html>

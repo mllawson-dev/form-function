@@ -9,6 +9,58 @@
       content="FORM / FUNCTION — an interactive kinetic sculpture. A self-initiated creative engineering study by Michael L. Lawson."
     />
     <link rel="icon" type="image/svg+xml" href="./brand/mllce-icon.svg" />
+    <link rel="canonical" href="https://form-function.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Michael L. Lawson Creative Engineering"
+    />
+    <meta
+      property="og:title"
+      content="FORM / FUNCTION — an interactive kinetic sculpture"
+    />
+    <meta
+      property="og:description"
+      content="Three nested rings, one luminous core, three chapters. A real-time 3D creative engineering study by Michael L. Lawson."
+    />
+    <meta property="og:url" content="https://form-function.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://form-function.vercel.app/social/form-function.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="FORM / FUNCTION wordmark beside a brass orbital sculpture on a graphite background"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="FORM / FUNCTION — an interactive kinetic sculpture"
+    />
+    <meta
+      name="twitter:description"
+      content="Three nested rings, one luminous core, three chapters. A real-time 3D creative engineering study by Michael L. Lawson."
+    />
+    <meta
+      name="twitter:image"
+      content="https://form-function.vercel.app/social/form-function.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/barlow-condensed-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/dm-sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>FORM / FUNCTION — Michael L. Lawson</title>
   </head>
   <body>
@@ -52,6 +104,28 @@
             role="group"
             aria-label="Interactive orbital sculpture: three nested metallic rings surrounding an illuminated core"
           ></div>
+          <div class="poster" aria-hidden="true">
+            <svg viewBox="0 0 500 500">
+              <g fill="none" stroke="#c7ae79" stroke-width="8">
+                <ellipse
+                  cx="250"
+                  cy="250"
+                  rx="190"
+                  ry="85"
+                  transform="rotate(-35 250 250)"
+                />
+                <ellipse cx="250" cy="250" rx="150" ry="150" />
+                <ellipse
+                  cx="250"
+                  cy="250"
+                  rx="70"
+                  ry="120"
+                  transform="rotate(30 250 250)"
+                />
+              </g>
+              <circle cx="250" cy="250" r="32" fill="#e4cf9f" />
+            </svg>
+          </div>
           <div id="fallback" hidden>
             <svg
               viewBox="0 0 500 500"
@@ -86,7 +160,7 @@
           </div>
           <div class="stage-foot">
             <span id="scene-status" role="status">Finished / assembled</span
-            ><span>DRAG TO ORBIT · SCROLL TO ZOOM</span>
+            ><span>CLICK A PART · DRAG TO ORBIT · SCROLL TO ZOOM</span>
           </div>
         </div>
         <div class="chapter-nav" aria-label="Sculpture chapters">
@@ -99,44 +173,82 @@
             <span>03</span> Activate <small>THE OBJECT IN MOTION</small>
           </button>
         </div>
-      </section>
-      <section id="controls" class="controls" aria-labelledby="controls-title">
-        <div>
-          <p class="eyebrow">THE OBJECT IS YOURS TO EXPLORE</p>
-          <h2 id="controls-title">Look closer.</h2>
-        </div>
-        <div class="control-group">
-          <span class="control-label">Surface</span>
-          <div class="segmented">
-            <button data-view="finished" aria-pressed="true">Finished</button
-            ><button data-view="wireframe" aria-pressed="false">
-              Wireframe</button
-            ><button data-view="blueprint" aria-pressed="false">
-              Blueprint
-            </button>
+        <div class="chapter-story" aria-live="polite">
+          <div data-story="0" hidden>
+            <p class="eyebrow">01 / IMAGINE</p>
+            <p>
+              Every object begins as a proposition. Here it is a single center
+              shared by three orbits, drawn in blueprint before it is given
+              weight. The grid and dimension lines are the honesty of the idea.
+            </p>
+          </div>
+          <div data-story="1" hidden>
+            <p class="eyebrow">02 / CONSTRUCT</p>
+            <p>
+              Structure is a set of decisions about what touches what. The rings
+              separate along the axle so each bearing, marking and joint can be
+              read on its own, then close back into one assembly.
+            </p>
+          </div>
+          <div data-story="2">
+            <p class="eyebrow">03 / ACTIVATE</p>
+            <p>
+              Motion is the argument for the form. Three independent axes turn
+              at different rates, so the silhouette never repeats and the core
+              reads as the still point the whole composition orbits.
+            </p>
           </div>
         </div>
-        <div class="control-group">
-          <label for="assembly"
-            >Assembly <output id="assembly-value">0%</output></label
-          ><input
-            id="assembly"
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            aria-label="Explode sculpture assembly"
-          />
+      </section>
+      <section id="controls" class="controls" aria-labelledby="controls-title">
+        <div class="controls-head">
+          <div>
+            <p class="eyebrow">INSTRUMENT PANEL</p>
+            <h2 id="controls-title">Look closer.</h2>
+          </div>
+          <button
+            id="instrument-toggle"
+            class="ghost"
+            aria-expanded="true"
+            aria-controls="instrument-panel"
+          >
+            <span>Hide</span> controls
+          </button>
         </div>
-        <div class="control-group">
-          <label for="speed"
-            >Motion speed <output id="speed-value">0.6×</output></label
-          ><input id="speed" type="range" min="0" max="150" value="60" />
-        </div>
-        <div class="actions">
-          <button id="motion" aria-pressed="false">Start motion</button
-          ><button id="reset">Reset view ↺</button
-          ><button id="sound" aria-pressed="false">Sound off</button>
+        <div id="instrument-panel" class="instrument-panel">
+          <div class="control-group">
+            <span class="control-label">Surface</span>
+            <div class="segmented">
+              <button data-view="finished" aria-pressed="true">Finished</button
+              ><button data-view="wireframe" aria-pressed="false">
+                Wireframe</button
+              ><button data-view="blueprint" aria-pressed="false">
+                Blueprint
+              </button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="assembly"
+              >Assembly <output id="assembly-value">0%</output></label
+            ><input
+              id="assembly"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              aria-label="Explode sculpture assembly"
+            />
+          </div>
+          <div class="control-group">
+            <label for="speed"
+              >Motion speed <output id="speed-value">0.6×</output></label
+            ><input id="speed" type="range" min="0" max="150" value="60" />
+          </div>
+          <div class="actions">
+            <button id="motion" aria-pressed="false">Start motion</button
+            ><button id="reset">Reset view ↺</button
+            ><button id="sound" aria-pressed="false">Sound off</button>
+          </div>
         </div>
       </section>
       <section id="notes" class="notes">
