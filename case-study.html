@@ -10,6 +10,47 @@
     />
     <title>FORM / FUNCTION — Case Study</title>
     <link rel="icon" type="image/svg+xml" href="./brand/mllce-icon.svg" />
+    <link rel="canonical" href="https://form-function.vercel.app/case-study" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:site_name"
+      content="Michael L. Lawson Creative Engineering"
+    />
+    <meta property="og:title" content="FORM / FUNCTION — Case Study" />
+    <meta
+      property="og:description"
+      content="Concept, cinematic interaction, procedural Three.js geometry, and accessible exploration behind an interactive kinetic sculpture."
+    />
+    <meta
+      property="og:url"
+      content="https://form-function.vercel.app/case-study"
+    />
+    <meta
+      property="og:image"
+      content="https://form-function.vercel.app/social/form-function.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FORM / FUNCTION — Case Study" />
+    <meta
+      name="twitter:image"
+      content="https://form-function.vercel.app/social/form-function.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/barlow-condensed-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/dm-sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -96,6 +137,26 @@
           axes. This is an explanatory drawing of the digital concept.
         </p>
       </section>
+      <section class="case-visual case-video">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          width="822"
+          height="480"
+          poster="./studies/sequence-poster.webp"
+          aria-label="The 18-second introduction: blueprint, exploded assembly, then finished metal in motion"
+        >
+          <source src="./studies/sequence-loop.webm" type="video/webm" />
+          <source src="./studies/sequence-loop.mp4" type="video/mp4" />
+        </video>
+        <p>
+          The introduction, captured from the production build: Imagine →
+          Construct → Activate in eighteen seconds.
+        </p>
+      </section>
       <section class="case-row">
         <div>
           <p class="eyebrow">02 / THE VISUAL APPROACH</p>
@@ -118,7 +179,62 @@
             header. Its original colors and geometry remain intact, with the
             full SVG logo on desktop and the icon on narrow screens.
           </p>
+          <p>
+            Materials carry small differences on purpose: each ring has its own
+            roughness and a brushed anisotropic highlight, the core wears a
+            clearcoat, and a soft contact shadow seats the pedestal.
+          </p>
         </div>
+      </section>
+      <section class="case-gallery" aria-label="Surface studies">
+        <figure>
+          <img
+            src="./studies/finished.webp"
+            width="822"
+            height="700"
+            loading="lazy"
+            alt="Finished surface: three brass rings around a luminous core on a graphite pedestal"
+          />
+          <figcaption>
+            Finished / brass, clearcoat core, contact shadow
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="./studies/wireframe.webp"
+            width="822"
+            height="700"
+            loading="lazy"
+            alt="Wireframe surface showing the torus and bearing topology"
+          />
+          <figcaption>
+            Wireframe / topology of the procedural geometry
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="./studies/blueprint.webp"
+            width="822"
+            height="700"
+            loading="lazy"
+            alt="Blueprint surface with cyan grid floor, dimension lines and projected radius annotations"
+          />
+          <figcaption>
+            Blueprint / grid floor, dimension lines, projected R1–R3
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="./studies/exploded.webp"
+            width="822"
+            height="700"
+            loading="lazy"
+            alt="Exploded assembly with the intermediate ring highlighted and annotated"
+          />
+          <figcaption>
+            Exploded / assembly at 85% with a part selected
+          </figcaption>
+        </figure>
       </section>
       <section class="case-row">
         <div>
@@ -150,16 +266,38 @@
             </li>
           </ol>
           <p>
-            The introduction lasts 18 seconds and starts on request. Visitors
-            can pause, resume, or exit, then choose surface views, adjust
-            assembly and speed, rotate the camera, and inspect component
-            annotations.
+            The sculpture drifts slowly on load, so the first frame is already
+            alive. The introduction lasts 18 seconds and starts on request.
+            Visitors can pause, resume, or exit, then choose surface views,
+            adjust assembly and speed, rotate the camera, and click a ring or
+            the core directly in the scene to read its construction note.
           </p>
           <p>
-            Sound is optional. It adds a synthesized ambient layer rather than
-            carrying information required to understand the piece.
+            Each chapter carries a short paragraph beneath the stage, so the
+            story is told even to visitors who never press Play. Controls are
+            tiered: Play and the chapters sit with the object; the instrument
+            panel of surface, assembly, speed and camera collapses by default on
+            small screens.
+          </p>
+          <p>
+            Sound is optional. It adds a synthesized ambient layer and a soft
+            per-chapter cue rather than carrying information required to
+            understand the piece.
           </p>
         </div>
+      </section>
+      <section class="case-visual case-mobile">
+        <img
+          src="./studies/mobile.webp"
+          width="780"
+          height="2360"
+          loading="lazy"
+          alt="The experience on a 390 pixel wide phone: stacked hero, sculpture, and chapter navigation"
+        />
+        <p>
+          Mobile / 390 px. The camera widens its field of view for narrow
+          stages.
+        </p>
       </section>
       <section class="case-row">
         <div>
@@ -188,7 +326,20 @@
           <p>
             A generated studio environment supplies reflections. Pixel density
             is capped to limit rendering cost, and camera framing adapts to
-            narrow viewports.
+            narrow viewports. Part selection uses a raycaster against the ring
+            bodies and core; the accessible component buttons remain the
+            keyboard path to the same state.
+          </p>
+          <p>
+            The page ships a 3 KB entry script and self-hosted fonts. Three.js
+            is loaded in an idle callback after first paint, behind an inline
+            SVG poster, so the hero and copy are visible before the 140 KB
+            (gzip) renderer arrives. Browsers without WebGL never download it.
+          </p>
+          <p>
+            Appending <code>?debug</code> to the URL shows a frame-time readout
+            (fps, average and worst frame, triangle count, pixel ratio) for
+            measuring on real hardware.
           </p>
         </div>
       </section>
@@ -246,9 +397,9 @@
             The sculpture is an artistic mechanism, not a validated physical
             machine. This self-initiated study has no client, commercial
             metrics, or user-research outcomes. Physical-device performance and
-            broader browser testing remain release checks; reduced-motion and
-            fallback handling were reviewed in code rather than simulated in
-            this pass.
+            broader browser testing remain release checks; the built-in debug
+            readout exists so those numbers can be recorded honestly rather than
+            estimated.
           </p>
           <p class="case-callout">
             The central lesson: motion earns its place when it helps a visitor
